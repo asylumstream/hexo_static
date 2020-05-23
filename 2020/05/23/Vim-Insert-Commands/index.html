@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vim Insert Commands | Asylum Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A selection of Vim commands for inserting text.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim Insert Commands">
+<meta property="og:url" content="https://asylumstream.github.io/2020/05/23/Vim-Insert-Commands/index.html">
+<meta property="og:site_name" content="Asylum Stream">
+<meta property="og:description" content="A selection of Vim commands for inserting text.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T13:21:18.000Z">
+<meta property="article:modified_time" content="2020-05-23T14:40:32.551Z">
+<meta property="article:author" content="AS">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Asylum Stream" type="application/atom+xml">
+  
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Armata|Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Asylum Stream</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-9 blog-main">
+          <article id="post-Vim-Insert-Commands" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Vim Insert Commands
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/05/23/Vim-Insert-Commands/" class="article-date"><time datetime="2020-05-23T13:21:18.000Z" itemprop="datePublished">23-05-2020</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+          <p>A selection of Vim commands for inserting text.</p>
+  <a id="more"></a>
+      <table class="table table-striped"><tr><td>a</td>
+      <td>Append after cursor.</td>
+      </tr><tr><td>A</td>
+      <td>Append to end of line.</td>
+      </tr><tr><td>c</td>
+      <td>Begin change operation.</td>
+      </tr><tr><td>C</td>
+      <td>Change to end of line.</td>
+      </tr><tr><td>gI</td>
+      <td>Insert at beginning of line.</td>
+      </tr><tr><td>i</td>
+      <td>Insert before cursor.</td>
+      </tr><tr><td>I</td>
+      <td>Insert at beginning of line.</td>
+      </tr><tr><td>o</td>
+      <td>Open a line below cursor.</td>
+      </tr><tr><td>O</td>
+      <td>Open a line above cursor.</td>
+      </tr><tr><td>R</td>
+      <td>Begin overwriting text.</td>
+      </tr><tr><td>s</td>
+      <td>Substitute a character.</td>
+      </tr><tr><td>S</td>
+      <td>Substitute entire line.</td>
+      </tr><tr><td>ESC</td>
+      <td>Terminate insert mode.</td>
+      </tr><tr><td>BACKSPACE</td>
+      <td> Delete previous character.</td>
+      </tr><tr><td>DELETE</td>
+      <td>Delete current character.</td>
+      </tr><tr><td>TAB</td>
+      <td>Insert a tab.</td>
+      </tr><tr><td>CTRL-A</td>
+      <td>Repeat last insertion.</td>
+      </tr><tr><td>CTRL-D</td>
+      <td>Shift line left to previous shiftwidth.</td>
+      </tr><tr><td>CTRL-E</td>
+      <td>Insert character found just below cursor.</td>
+      </tr><tr><td>CTRL-H</td>
+      <td>Delete previous character (same as backspace).</td>
+      </tr><tr><td>CTRL-I</td>
+      <td>Insert a tab.</td>
+      </tr><tr><td>CTRL-K</td>
+      <td>Begin insertion of multikeystroke character.</td>
+      </tr><tr><td>CTRL-N</td>
+      <td>Insert next completion of the pattern to the left of the cursor.</td>
+      </tr><tr><td>CTRL-P</td>
+      <td>Insert previous completion of the pattern to the left of the cursor.</td>
+      </tr><tr><td>CTRL-T</td>
+      <td>Shift line right to next shiftwidth.</td>
+      </tr><tr><td>CTRL-U</td>
+      <td>Delete current line.</td>
+      </tr><tr><td>CTRL-V</td>
+      <td>Insert next character verbatim.</td>
+      </tr><tr><td>CTRL-W</td>
+      <td>Delete previous word.</td>
+      </tr><tr><td>CTRL-Y</td>
+      <td>Insert character found just above cursor.</td>
+      </tr><tr><td>CTRL-[</td>
+      <td>(ESC) Terminate insert mode.</td>
+      </tr>
+  </table>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://asylumstream.github.io/2020/05/23/Vim-Insert-Commands/" data-id="ckak7z7r70003vd07bxa8hs61" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Vim-Edit-Commands/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Vim Edit Commands</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Vim-Movement-Commands/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Vim Movement Commands</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+          
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Shell/" rel="tag">Shell</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/05/23/Structured-Shell-Commands/">Structured Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Scripting/">Basic Shell Scripting</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Commands/">Basic Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Movement-Commands/">Vim Movement Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Insert-Commands/">Vim Insert Commands</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 AS<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Structured Shell Commands | Asylum Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The if-then-else-elif Statement  The most basic type of structured command is the if-then statement. The if-then statement has the following format: if command then     commands fi  In the if-then sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Structured Shell Commands">
+<meta property="og:url" content="https://asylumstream.github.io/2020/05/23/Structured-Shell-Commands/index.html">
+<meta property="og:site_name" content="Asylum Stream">
+<meta property="og:description" content="The if-then-else-elif Statement  The most basic type of structured command is the if-then statement. The if-then statement has the following format: if command then     commands fi  In the if-then sta">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T14:40:51.000Z">
+<meta property="article:modified_time" content="2020-05-23T14:42:16.411Z">
+<meta property="article:author" content="AS">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Shell">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Asylum Stream" type="application/atom+xml">
+  
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Armata|Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Asylum Stream</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-9 blog-main">
+          <article id="post-Structured-Shell-Commands" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Structured Shell Commands
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/05/23/Structured-Shell-Commands/" class="article-date"><time datetime="2020-05-23T14:40:51.000Z" itemprop="datePublished">23-05-2020</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+         <h3 id="if-then-else-elif-statement">The if-then-else-elif Statement</h3>
+ <p>The most basic type of structured command is the <code>if-then</code> statement. The <code>if-then</code> statement has the following format:</p>
+<pre>if command
+then
+    commands
+fi</pre>
+
+<p>In the <code>if-then</code> statement, you have only one option for whether a command is successful. If the command returns a non-zero exit status code, the bash shell just moves on to the next command in the script. In this situation, it would be nice to be able to execute an alternate set of commands. That’s exactly what the <code>if-then-else</code> statement is for.</p>
+
+<pre>if command
+then
+    commands
+else
+    commands
+fi</pre>
+
+<a id="more"></a>
+
+<p>Instead of having to write separate <code>if-then</code> statements, you can use an alternative version of the else section, called <code>elif</code>. The <code>elif</code> continues an else section with another <code>if-then</code> statement:</p>
+
+<pre>if command1
+then
+    commands
+elif command2
+then
+    more commands
+fi</pre>
+
+<p>The <code>elif</code> statement line provides another command to evaluate, similar to the original if statement line. If the exit status code from the <code>elif</code> command is zero, bash executes the commands in the second then statement section. Using this method of nesting provides cleaner code with an easier-to-follow logic flow.</p>
+
+
+   <h3 id="test-command">The Test Command</h3>
+    <p>The test command provides a way to test different conditions in an <code>if-then</code> statement. If the condition listed in the test command evaluates to <code>TRUE</code>, the test command exits with a zero exit status code. If the condition is <code>FALSE</code>, the test command exits with a non-zero exit status code, which causes the <code>if-then</code> statement to exit.</p>
+
+<pre>if test condition
+then
+    commands
+fi</pre>
+
+<p>The test command and test conditions can evaluate three classes of conditions: Numeric, String and File.</p>
+
+<h4>Numeric</h4>
+<table class="table table-striped">
+  <tr>
+      <th>Comparison</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>n1 -eq n2</td>
+      <td>Checks if n1 is equal to n2</td>
+  </tr>
+  <tr>
+      <td>n1 -ge n2</td>
+      <td>Checks if n1 is greater than or equal to n2</td>
+  </tr>
+
+  <tr>
+      <td>n1 -gt n2</td>
+      <td>Checks if n1 is greater than n2</td>
+  </tr>
+
+  <tr>
+      <td>n1 -le n2</td>
+      <td>Checks if n1 is less than or equal to n2</td>
+  </tr>
+
+  <tr>
+      <td>n1 -lt n2</td>
+      <td>Checks if n1 is less than n2</td>
+  </tr>
+
+  <tr>
+      <td>n1 -ne n2</td>
+      <td>Checks if n1 is not equal to n2</td>
+  </tr>
+
+</table>
+
+<h4>String</h4>
+<table class="table table-striped">
+  <tr>
+      <th>Comparison</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>str1 = str2</td>
+      <td>Checks if str1 is the same as str2</td>
+  </tr>
+  <tr>
+      <td>str1 != str2</td>
+      <td>Checks if str1 is not the same as str2</td>
+  </tr>
+
+  <tr>
+      <td>str1 &lt; str2</td>
+      <td>Checks if str1 is less than str2</td>
+  </tr>
+
+  <tr>
+      <td>str1 &gt; str2</td>
+      <td>Checks if str1 is greater than str2</td>
+  </tr>
+
+  <tr>
+      <td>-n str1</td>
+      <td>Checks if str1 has a length greater than zero</td>
+  </tr>
+
+  <tr>
+      <td>-z str1</td>
+      <td>Checks if str1 has a length of zero</td>
+  </tr>
+
+</table>
+
+<h4>File</h4>
+<table class="table table-striped">
+  <tr>
+      <th>Comparison</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>-d file</td>
+      <td>Checks if file exists and is a directory</td>
+  </tr>
+  <tr>
+      <td>-e file</td>
+      <td>Checks if file exists</td>
+  </tr>
+
+  <tr>
+      <td>-f file</td>
+      <td>Checks if file exists and is a file</td>
+  </tr>
+
+  <tr>
+      <td>-r file</td>
+      <td>Checks if file exists and is readable</td>
+  </tr>
+
+  <tr>
+      <td>-s file</td>
+      <td>Checks if file exists and is not empty</td>
+  </tr>
+
+  <tr>
+      <td>-w</td>
+      <td>Checks if file exists and is writable</td>
+  </tr>
+  <tr>
+      <td>-x</td>
+      <td>Checks if file exists and is executable</td>
+  </tr>
+  <tr>
+      <td>-O</td>
+      <td>Checks if file exists and is owned by the current user</td>
+  </tr>
+  <tr>
+      <td>-G</td>
+      <td>Checks if file exists and the default group is the same as the current user</td>
+  </tr>
+  <tr>
+      <td>file1 -nt file2</td>
+      <td>Checks if file1 is newer than file2</td>
+  </tr>
+  <tr>
+      <td>file1 -ot file2</td>
+      <td>Checks if file1 is older than file2</td>
+  </tr>
+
+</table>
+
+   <h3 id="testing-compound-conditions">Testing Compound Conditions</h3>
+    <p>The <code>if-then</code> statement allows you to use Boolean logic to combine tests. You can use these two Boolean operators:</p>
+      <ul>
+          <li>condition1 && condition2</li>
+          <li>condition1 || condition2</li>
+     </ul>
+
+   <p>The first Boolean operation uses the <code>AND</code> Boolean operator to combine two conditions. Both conditions must be met for the <code>then</code> section to execute.</p>
+
+   <p>The second Boolean operation uses the <code>OR</code> Boolean operator to combine two conditions. If either condition evaluates to a <code>TRUE</code> condition, the <code>then</code> section is executed.</p>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://asylumstream.github.io/2020/05/23/Structured-Shell-Commands/" data-id="ckak7z7qv0000vd0754ylb2vn" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Basic-Shell-Scripting/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Basic Shell Scripting</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+          
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Shell/" rel="tag">Shell</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/05/23/Structured-Shell-Commands/">Structured Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Scripting/">Basic Shell Scripting</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Commands/">Basic Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Movement-Commands/">Vim Movement Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Insert-Commands/">Vim Insert Commands</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 AS<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

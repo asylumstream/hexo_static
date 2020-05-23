@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vim Edit Commands | Asylum Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A selection of Vim commands for editing text.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim Edit Commands">
+<meta property="og:url" content="https://asylumstream.github.io/2020/05/23/Vim-Edit-Commands/index.html">
+<meta property="og:site_name" content="Asylum Stream">
+<meta property="og:description" content="A selection of Vim commands for editing text.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T13:05:45.000Z">
+<meta property="article:modified_time" content="2020-05-23T14:40:23.191Z">
+<meta property="article:author" content="AS">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Asylum Stream" type="application/atom+xml">
+  
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Armata|Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Asylum Stream</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-9 blog-main">
+          <article id="post-Vim-Edit-Commands" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Vim Edit Commands
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/05/23/Vim-Edit-Commands/" class="article-date"><time datetime="2020-05-23T13:05:45.000Z" itemprop="datePublished">23-05-2020</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A selection of Vim commands for editing text.</p>
+  <a id="more"></a>
+<p>The commands: <code>c</code>, <code>d</code> and <code>y</code> are the basic editing operators.</p>
+<h4>Changing and Deleting Text</h4>
+<table class="table table-striped"><tr><td>cw</td>
+<td>Change word.</td>
+</tr><tr><td>cc</td>
+<td>Change line.</td>
+</tr><tr><td>c$</td>
+<td>Change text from current position to end of line.</td>
+</tr><tr><td>dd</td>
+<td>Delete current line.</td>
+</tr><tr><td><em>num</em> dd</td>
+<td>Delete <em>num</em> lines.</td>
+</tr><tr><td>d$</td>
+<td>Delete text from current position  to end of line.</td>
+</tr><tr><td>D</td>
+<td>Same as d$.</td>
+</tr><tr><td>dw</td>
+<td>Delete a word.</td>
+</tr><tr><td>d}</td>
+<td>Delete up to next paragraph.</td>
+</tr><tr><td>d^</td>
+<td>Delete back to the beginning of the line.</td>
+</tr><tr><td>d /<em>pat</em></td>
+<td>Delete up to first occurrence of pattern .</td>
+</tr><tr><td>dn</td>
+<td>Delete up to next occurrence of pattern.</td>
+</tr><tr><td>df <em>x</em></td>
+<td>Delete up to and including <em>x</em> on current line.</td>
+</tr><tr><td>dt <em>x</em></td>
+<td> Delete up to (but not including) <em>x</em> on current line.</td>
+</tr><tr><td>dl</td>
+<td>Delete up to last line on screen.</td>
+</tr><tr><td>dG</td>
+<td>Delete to end of file.</td>
+</tr><tr><td>gqap</td>
+<td>Reformat current paragraph to <code>textwidth.</code></td>
+</tr><tr><td>g~w</td>
+<td>Switch case of word.</td>
+</tr><tr><td>guw</td>
+<td>Change word to lowercase.</td>
+</tr><tr><td>gUw</td>
+<td>Change word to uppercase.</td>
+</tr><tr><td>p</td>
+<td>Insert last deleted or yanked text after cursor.</td>
+</tr><tr><td>gp</td>
+<td>Same as p, but leave cursor at end of inserted text.</td>
+</tr><tr><td>gP</td>
+<td>Same as P, but leave cursor at end of inserted text.</td>
+</tr><tr><td>]p</td>
+<td>Same as p, but match current indention.</td>
+</tr><tr><td>[p</td>
+<td>Same as P, but match current indention.</td>
+</tr><tr><td>P</td>
+<td>Insert last deleted or yanked text before cursor.</td>
+</tr><tr><td>r <em>x</em></td>
+<td>Replace character with <em>x</em>.</td>
+</tr><tr><td>R <em>text</em></td>
+<td>Replace with new text, beginning at cursor.</td>
+</tr><tr><td>s</td>
+<td>Substitute character</td>
+</tr><tr><td>4s</td>
+<td>Substitute four characters.</td>
+</tr><tr><td>S</td>
+<td>Substitute entire line.</td>
+</tr><tr><td>u</td>
+<td>Undo last change.</td>
+</tr><tr><td>CTRL-R</td>
+<td>Redo last change.</td>
+</tr><tr><td>U</td>
+<td>Restore current line.</td>
+</tr><tr><td>x</td>
+<td>Delete current cursor position.</td>
+</tr><tr><td>X</td>
+<td>Delete back one character.</td>
+</tr><tr><td>5X</td>
+<td>Delete back five characters</td>
+</tr><tr><td>.</td>
+<td>Repeat last change.</td>
+</tr><tr><td>~</td>
+<td>Reverse case and move cursor right.</td>
+</tr><tr><td>CTRL-A</td>
+<td>Increment number under cursor.</td>
+</tr><tr><td>CTRL-X</td>
+<td>Decrement number under cursor.</td>
+</tr></table><h4>Copying and Moving</h4>
+<table class="table table-striped">
+<tr><td>Y</td>
+<td>Copy current line.</td>
+</tr><tr><td>3Y</td>
+<td>Copy three lines from cursor.</td>
+</tr><tr><td>yy</td>
+<td>Copy current line.</td>
+</tr><tr><td>" <em>x</em> yy</td>
+<td>Copy current line to register.</td>
+</tr><tr><td>ye</td>
+<td>Copy text to end of word.</td>
+</tr><tr><td>yw</td>
+<td>As <code>ye</code>, but include the whitespace after the word.</td>
+</tr><tr><td>y$</td>
+<td>Copy rest of line</td>
+</tr><tr><td>" <em>x</em> dd</td>
+<td>Delete current line into register <em>x</em></td>
+</tr><tr><td>" <em>x</em> d</td>
+<td>Delete into register <em>x</em></td>
+</tr><tr><td>" <em>x</em> p</td>
+<td>Put contents of register <em>x</em></td>
+</tr><tr><td>y]]</td>
+<td>Copy up to next section heading.</td>
+</tr><tr><td>J</td>
+<td>Join current line to next line.</td>
+</tr><tr><td>gJ</td>
+<td>Same as J, but without inserting a space.</td>
+</tr><tr><td>:J</td>
+<td>Same as J.</td>
+</tr><tr><td>:j!</td>
+<td>Same as gJ.</td>
+</tr></table><h4>Saving and Exiting</h4>
+<table class="table table-striped"><tr><td>ZZ</td>
+<td>Quit vim, writing the file only if changes were made.</td>
+</tr><tr><td>:x</td>
+<td>Same as ZZ.</td>
+</tr><tr><td>:wq</td>
+<td>Write file and quit.</td>
+</tr><tr><td>:w</td>
+<td>Write file.</td>
+</tr><tr><td>:w <em>file</em></td>
+<td>Save copy to <em>file</em></td>
+</tr><tr><td>:<em>n , m</em> w <em>file</em></td>
+<td>Write lines <em>n</em> to <em>m</em> to new <em>file</em></td>
+</tr><tr><td>:<em>n , m</em> w &gt;&gt;<em>file</em></td>
+<td>Append lines <em>n</em> to <em>m</em> to new <em>file</em></td>
+</tr><tr><td>:w!</td>
+<td>Write file (overriding protection).</td>
+</tr><tr><td>:w! <em>file</em></td>
+<td>Overwrite <em>file</em> with current text.</td>
+</tr><tr><td>:w %<code>.new</code></td>
+<td>Write current buffer named <em>file</em> as <code>file.new</code></td>
+</tr><tr><td>:q</td>
+<td>Quit. Fails if changes were made.</td>
+</tr><tr><td>:q!</td>
+<td>Quit. Discarding edits.</td>
+</tr></table>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://asylumstream.github.io/2020/05/23/Vim-Edit-Commands/" data-id="ckak7z7r90004vd07g8sf09nm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Vim-Insert-Commands/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Vim Insert Commands</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+          
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Shell/" rel="tag">Shell</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/05/23/Structured-Shell-Commands/">Structured Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Scripting/">Basic Shell Scripting</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Commands/">Basic Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Movement-Commands/">Vim Movement Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Insert-Commands/">Vim Insert Commands</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 AS<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

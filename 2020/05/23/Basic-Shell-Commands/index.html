@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Basic Shell Commands | Asylum Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Basic Commands    Archive &amp; Compress Data    Using tar            Put files to be compressed in the same folder.       mv files folder_name     Create the tar file.       tar -cvf archive_files folder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Shell Commands">
+<meta property="og:url" content="https://asylumstream.github.io/2020/05/23/Basic-Shell-Commands/index.html">
+<meta property="og:site_name" content="Asylum Stream">
+<meta property="og:description" content="Basic Commands    Archive &amp; Compress Data    Using tar            Put files to be compressed in the same folder.       mv files folder_name     Create the tar file.       tar -cvf archive_files folder">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T14:00:24.000Z">
+<meta property="article:modified_time" content="2020-05-23T14:28:15.521Z">
+<meta property="article:author" content="AS">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Shell">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Asylum Stream" type="application/atom+xml">
+  
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Armata|Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Asylum Stream</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-9 blog-main">
+          <article id="post-Basic-Shell-Commands" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Basic Shell Commands
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/05/23/Basic-Shell-Commands/" class="article-date"><time datetime="2020-05-23T14:00:24.000Z" itemprop="datePublished">23-05-2020</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2>Basic Commands</h2>
+
+  <h3 id="ArchiveCompressData">Archive & Compress Data</h3>
+
+  <h4>Using tar</h4>
+    <ol>
+      <li>Put files to be compressed in the same folder.</li>
+      <p>mv <em>files</em> <em>folder_name</em></p>
+
+   <li>Create the tar file.</li>
+      <p>tar -cvf <em>archive_files</em> <em>folder_name</em> /</p>
+      <ul>
+        <li>-c = Creates a .tar archive</li>
+        <li>-v = Describes what is happening</li>
+        <li>-f = assembles the archive into one file</li>
+      </ul>
+      <li>Decompress the .tar file.</li>
+      <p>tar -xvf <em>archive_files</em>.tar <em>archive_files</em>.tar</p>
+    </ol>
+
+   <h4>Create gzip file</h4>
+    <p>gzip <em>archive_files</em>.tar</p>
+    <p>or</p>
+    <p>tar -zcvf <em>archive_files</em>.tar.gz <em>folder_name</em> /</p>
+
+  <a id="more"></a>
+
+   <h4>Decompress gzip file</h4>
+    <p>gunzip <em>archive_files</em>.tar.gz</p>
+    <p>or</p>
+    <p>tar -zcvf <em>archive_files</em>.tar.gz <em>folder_name</em> /</p>
+
+   <h4>Create bzip2 file</h4>
+    <p>bzip2 <em>archive_files</em>.tar</p>
+    <p>or</p>
+    <p>tar -jcvf <em>archive_files</em>.tar.bz2 <em>folder_name</em> /</p>
+
+   <h4>Decompress gzip file</h4><h3 id=""></h3>
+    <p>bunzip2 <em>archive_files</em>.tar.bz2</p>
+    <p>or</p>
+    <p>tar -jcvf <em>archive_files</em>.tar.bz2 <em>folder_name</em> /</p>
+
+   <h3 id="CreateModifyUserAccounts">Create & Modify User Accounts</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>sudo useradd <em>user_name</em></td>
+        <td>Create new user</td>
+      </tr>
+      <tr>
+        <td>sudo passwd <em>account_name</em></td>
+        <td>Change a user's password</td>
+      </tr>
+      <tr>
+        <td>sudo deluser <em>account_name</em></td>
+        <td>Delete an account</td>
+      </tr>
+      <tr>
+        <td>addgroup <em>group_name</em></td>
+        <td>Create a new user group</td>
+      </tr>
+      <tr>
+        <td>delgroup <em>group_name</em></td>
+        <td>Delete a user group</td>
+      </tr>
+      <tr>
+        <td>usermod -g <em>group_name</em> <em>account_name</em></td>
+        <td>Add user to a group</td>
+      </tr>
+      <tr>
+        <td>usermod -g <em>account_name</em> <em>new_account_name</em></td>
+        <td>Change account name</td>
+      </tr>
+      <tr>
+        <td>usermod -aG <em>group_name</em> <em>account_name</em></td>
+        <td>Add user to a group (without losing current user groups)</td>
+
+   </table>
+
+   <h3 id="ExtractSortFilterData">Extract, Sort & Filter Data</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>grep <em>text</em> <em>file_name</em></td>
+        <td>Search for text in file</td>
+      </tr>
+      <tr>
+        <td>grep -r <em>text</em> <em>folder_name</em> /</td>
+        <td>Search for file names with ocuurence of the word 'text'</td>
+      </tr>
+      <tr>
+        <td>grep -E^<em>text</em> <em>file_name</em> /</td>
+        <td>Search start of lines with the word 'text'</td>
+      </tr>
+      <tr>
+        <td>grep -E <em>0-9</em> <em>file_name</em> /</td>
+        <td>Show lines containing numbers 0 to 9</td>
+      </tr>
+      <tr>
+        <td>grep -E <em>a-zA-Z</em> <em>file_name</em> /</td>
+        <td>Retrieve all lines with alphabetical letters</td>
+      </tr>
+      <tr>
+        <td>sort <em>file_name</em></td>
+        <td>Sort alphabetically</td>
+      </tr>
+      <tr>
+        <td>sort -o <em>file_name</em> <em>output_file_name</em></td>
+        <td>Write result to a file</td>
+      </tr>
+      <tr>
+        <td>sort -r <em>file_name</em></td>
+        <td>Sort in reverse</td>
+      </tr>
+      <tr>
+        <td>sort -R <em>file_name</em></td>
+        <td>Sort randomly</td>
+      </tr>
+      <tr>
+        <td>sort -n <em>file_name</em></td>
+        <td>Sort numbers</td>
+      </tr>
+      <tr>
+        <td>wc</td>
+        <td>Word count (number of: lines, words, byte size)</td>
+      </tr>
+      <tr>
+        <td>wc -l <em>file_name</em></td>
+        <td>Number of lines</td>
+      </tr>
+      <tr>
+        <td>wc -w <em>file_name</em></td>
+        <td>Number of words</td>
+      </tr>
+      <tr>
+        <td>wc -c <em>file_name</em></td>
+        <td>Number of characters</td>
+      </tr>
+      <tr>
+        <td>wc -m <em>file_name</em></td>
+        <td>Byte size</td>
+      </tr>
+
+   </table>
+
+   <h3 id="CreateModifyUserAccounts">Create & Modify User Accounts</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>sudo useradd <em>user_name</em></td>
+        <td>Create new user</td>
+      </tr>
+      <tr>
+        <td>sudo passwd <em>account_name</em></td>
+        <td>Change a user's password</td>
+      </tr>
+      <tr>
+        <td>sudo deluser <em>account_name</em></td>
+        <td>Delete an account</td>
+      </tr>
+      <tr>
+        <td>addgroup <em>group_name</em></td>
+        <td>Create a new user group</td>
+      </tr>
+      <tr>
+        <td>delgroup <em>group_name</em></td>
+        <td>Delete a user group</td>
+      </tr>
+      <tr>
+        <td>usermod -g <em>group_name</em> <em>account_name</em></td>
+        <td>Add user to a group</td>
+      </tr>
+      <tr>
+        <td>usermod -g <em>account_name</em> <em>new_account_name</em></td>
+        <td>Change account name</td>
+      </tr>
+      <tr>
+        <td>usermod -aG <em>group_name</em> <em>account_name</em></td>
+        <td>Add user to a group (without losing current user groups)</td>
+
+   </table>
+
+   <h3 id="ExtractSortFilterData">Extract, Sort & Filter Data</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>grep <em>text</em> <em>file_name</em></td>
+        <td>Search for text in file</td>
+      </tr>
+      <tr>
+        <td>grep -r <em>text</em> <em>folder_name</em> /</td>
+        <td>Search for file names with ocuurence of the word 'text'</td>
+      </tr>
+      <tr>
+        <td>grep -E^<em>text</em> <em>file_name</em> /</td>
+        <td>Search start of lines with the word 'text'</td>
+      </tr>
+      <tr>
+        <td>grep -E <em>0-9</em> <em>file_name</em> /</td>
+        <td>Show lines containing numbers 0 to 9</td>
+      </tr>
+      <tr>
+        <td>grep -E <em>a-zA-Z</em> <em>file_name</em> /</td>
+        <td>Retrieve all lines with alphabetical letters</td>
+      </tr>
+      <tr>
+        <td>sort <em>file_name</em></td>
+        <td>Sort alphabetically</td>
+      </tr>
+      <tr>
+        <td>sort -o <em>file_name</em> <em>output_file_name</em></td>
+        <td>Write result to a file</td>
+      </tr>
+      <tr>
+        <td>sort -r <em>file_name</em></td>
+        <td>Sort in reverse</td>
+      </tr>
+      <tr>
+        <td>sort -R <em>file_name</em></td>
+        <td>Sort randomly</td>
+      </tr>
+      <tr>
+        <td>sort -n <em>file_name</em></td>
+        <td>Sort numbers</td>
+      </tr>
+      <tr>
+        <td>wc</td>
+        <td>Word count (number of: lines, words, byte size)</td>
+      </tr>
+      <tr>
+        <td>wc -l <em>file_name</em></td>
+        <td>Number of lines</td>
+      </tr>
+      <tr>
+        <td>wc -w <em>file_name</em></td>
+        <td>Number of words</td>
+      </tr>
+      <tr>
+        <td>wc -c <em>file_name</em></td>
+        <td>Number of characters</td>
+      </tr>
+      <tr>
+        <td>wc -m <em>file_name</em></td>
+        <td>Byte size</td>
+      </tr>
+
+   </table>
+
+   <h3 id="FileManipulation">File Manipulation</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>ls -a</td>
+        <td>List files and folders </td>
+      </tr>
+      <tr>
+        <td>cat <em>file_name</em></td>
+        <td>Show content of file</td>
+      </tr>
+      <tr>
+        <td>head</td>
+        <td>From the top</td>
+      </tr>
+      <tr>
+        <td>tail</td>
+        <td>From the bottom</td>
+      </tr>
+      <tr>
+        <td>mkdir</em></td>
+        <td>Create a new directory</td>
+      </tr>
+      <tr>
+        <td>cp</td>
+        <td>Copy file</td>
+      </tr>
+      <tr>
+        <td>cp <em>file_name.txt</em> <em>new_file_name.txt</em></td>
+        <td>Copy and rename a file</td>
+      </tr>
+      <tr>
+        <td>cp <em>file_name.txt</em> <em>folder_name.txt</em></td>
+        <td>Copy to folder</td>
+      </tr>
+      <tr>
+        <td>cp -R <em>file_name.txt</em> <em>new_folder_name.txt</em></td>
+        <td>Copy and rename a folder</td>
+      </tr>
+      <tr>
+        <td>cp *.txt <em>folder_name.txt</em></td>
+        <td>Copy all of .txt files to folder</td>
+      </tr>
+      <tr>
+      <td>mv <em>file_name.txt</em> <em>folder_name.txt</em></td>
+      <td>Move file to a folder</td>
+      </tr>
+      <tr>
+      <td>mv <em>folder_name1</em> <em>folder_name2</em></td>
+      <td>Move folder in folder</td>
+      </tr>
+      <tr>
+      <td>mv <em>file_name.txt</em> <em>file_name2.txt</em></td>
+      <td>Rename a file</td>
+      </tr>
+      <tr>
+        <td>mv <em>folder_name</em> / ..</td>
+        <td>Move folder up in hierarchy</td>
+      </tr>
+      <tr>
+        <td>rm <em>file_name</em> ..</td>
+        <td>Delete file(s)</td>
+      </tr>
+      <tr>
+        <td>rm -i <em>file_name</em> ..</td>
+        <td>Delete file(s) with confirmation</td>
+      </tr>
+      <tr>
+        <td>rm -f <em>file_name</em> ..</td>
+        <td>Forced deletion of a file</td>
+      </tr>
+      <tr>
+        <td>rm -r <em>folder_name</em> /</td>
+        <td>Delete folder</td>
+      </tr>
+      <tr>
+        <td>touch <em>file_name</em></td>
+        <td>Create or update a file</td>
+      </tr>
+      <tr>
+        <td>ln <em>file_name1</em> <em>file_name2</em></td>
+        <td>Physical link</td>
+      </tr>
+      <tr>
+        <td>ln -s<em>file_name1</em> <em>file_name2</em></td>
+        <td>Symbolic link</td>
+      </tr>
+
+   </table>
+
+   <h3 id="FilePermissions">File Permissions</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>chmod</td>
+        <td>Modify user access/permission</td>
+      </tr>
+      <tr>
+        <td>u</td>
+        <td>User</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>Group</td>
+      </tr>
+      <tr>
+        <td>o</td>
+        <td>Other</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>Directory</td>
+      </tr>
+      <tr>
+        <td>l</td>
+        <td>Link</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Read permissions</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Write permissions</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Execute permissions (scripts and programs)</td>
+      </tr>
+
+   </table>
+
+   <h3 id="InstallingSoftware">Installing Software</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>pacman -S <em>name_of_software</em></td>
+        <td>Install software on Arch Linux.</td>
+      </tr>
+      <tr>
+        <td>sudo apt-get install <em>name_of_software</em></td>
+        <td>Install software on a Debian based distribution (including Ubuntu)</td>
+      </tr>
+    </table>
+
+   <h4>Compiling from Source</h4>
+    <ol>
+      <li>Create a folder in which to place the file.</li>
+      <p>mkdir <em>folder_name</em></p>
+
+   <li>cd to directory.</li>
+
+   <li>ls to verify the file is there.</li>
+
+   <li>Decompress the file to destination folder.</li>
+
+   <li>ls to view newly created directory.</li>
+
+   <li>cd to new directory.</li>
+
+   <li>ls to verify that there is an INSTALL file.</li>
+
+   <li>more INSTALL</li>
+
+   <li>If there is no install file:</li>
+      <ul>
+        <li>execute ./configure</li>
+        <li>run make</li>
+        <li>su root</li>
+        <li>make install</li>
+      </ul>
+    </ol>
+
+   <h3 id="ProcessManagement">Process Management</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>w</td>
+        <td>Who is logged in</td>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Static process list</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>Dynamic process list (q = quit, h = help, k = kill a process)</td>
+      </tr>
+      <tr>
+        <td>kill</td>
+        <td>kill a process</td>
+      </tr>
+      <tr>
+        <td>killall</td>
+        <td>Kill multiple processes</td>
+      </tr>
+      <tr>
+        <td>sudo halt</td>
+        <td>Close computer</td>
+      </tr>
+      <tr>
+        <td>sudo reboot</td>
+        <td>Reboot</td>
+      </tr>
+    </table>
+
+   <h3 id="RedirectionChaining">Redirection & Chaining</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>'&gt;'</td>
+        <td>Place at the end of a command to redirect the result to a file</td>
+      </tr>
+      <tr>
+        <td>|</td>
+        <td>Place at the end of a command to enter another command</td>
+      </tr>
+
+   </table>
+
+
+   <h3 id="ResearchingFiles">Researching Files</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>locate <em>text</em></td>
+        <td>Search content of all files </td>
+      </tr>
+      <tr>
+        <td>locate <em>file_name</em></td>
+        <td>Search for a file</td>
+      </tr>
+      <tr>
+        <td>sudo updatedb</td>
+        <td>update database of files</td>
+      </tr>
+      <tr>
+        <td>find -name <em>"file_name"</em></td>
+        <td>Find file by filename</td>
+      </tr>
+
+   </table>
+
+   <h3 id="TerminalNavigation">Terminal Navigation</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>ls -a</td>
+        <td>List files and folders </td>
+      </tr>
+      <tr>
+        <td>ls <em>folder_name</em></td>
+        <td>List files in folder</td>
+      </tr>
+      <tr>
+        <td>ls -lh</td>
+        <td>Detailed list, human readable</td>
+      </tr>
+      <tr>
+        <td>ls -l *.txt</td>
+        <td>List .txt files only</td>
+      </tr>
+      <tr>
+        <td>ls -lh <em>file_name</em></td>
+        <td>Result for file only</td>
+      </tr>
+      <tr>
+        <td>cd <em>folder_name</em></td>
+        <td>Change directory (use "" if folder has spaces)</td>
+      </tr>
+      <tr>
+        <td>cd /</td>
+        <td>Go to root</td>
+      </tr>
+      <tr>
+        <td>cd ..</td>
+        <td>Go up one folder</td>
+      </tr>
+      <tr>
+        <td>du -h</td>
+        <td>Disk usage of folders, human readable</td>
+      </tr>
+      <tr>
+        <td>du -ah</td>
+        <td>Disk usage of files and folders, human readable</td>
+      </tr>
+      <tr>
+        <td>pwd</td>
+        <td>Print working directory</td>
+      </tr>
+      <tr>
+        <td>man <em>command</em></td>
+        <td>Show manual</td>
+      </tr>
+    </table>
+
+   <h3 id="TerminalShortcuts">Terminal Shortcuts</h3>
+
+   <table class="table table-striped">
+      <tr>
+        <td>CTRL L</td>
+        <td>Clear terminal</td>
+      </tr>
+      <tr>
+        <td>CTRL D</td>
+        <td>Logout</td>
+      </tr>
+      <tr>
+        <td>SHIFT Pg Up/Down</td>
+        <td>Go up/down the terminal</td>
+      </tr>
+      <tr>
+        <td>CTRL A</td>
+        <td>Cursor to start of line</td>
+      </tr>
+      <tr>
+        <td>CTRL E</td>
+        <td>Cursor to end of line</td>
+      </tr>
+      <tr>
+        <td>CTRL U</td>
+        <td>Delete left of cursor</td>
+      </tr>
+      <tr>
+        <td>CTRL K</td>
+        <td>Delete right of cursor</td>
+      </tr>
+      <tr>
+        <td>CTRL W</td>
+        <td>Delete word on the left</td>
+      </tr>
+      <tr>
+        <td>CTRL Y</td>
+        <td>Paste (after using CTRL U,K or W)</td>
+      </tr>
+      <tr>
+        <td>TAB</td>
+        <td>Auto complete file or command</td>
+      </tr>
+      <tr>
+        <td>CTRL R</td>
+        <td>Reverse search history</td>
+      </tr>
+      <tr>
+        <td>!!</td>
+        <td>Repeat last command</td>
+      </tr>
+      <tr>
+        <td>CTRL Z</td>
+        <td>Stops current command (resume with fg in foreground or bg in background)</td>
+      </tr>
+
+   </table>
+
+   <h3 id="SystemMonitoring">System Monitoring</h3>
+
+   <h3 id="hardware">Hardware</h3>
+
+   <h4>Display Message / Driver Message</h4>
+    <p>This command shows Kernel ring buffers that contain information about device drivers loaded into the kernel at the time of booting. These messages can be useful in diagnosing or debugging hardware and device drivers.</p>
+
+   <pre class="prettyprint linenums">
+    dmesg
+    </pre>
+
+   <p>Output:</p>
+    <pre class="prettyprint">
+    [    0.000000] Initializing cgroup subsys cpuset
+    [    0.000000] Initializing cgroup subsys cpu
+    [    0.000000] Initializing cgroup subsys cpuacct
+    [    0.000000] Linux version 4.3.3-2-ARCH (builduser@tobias) (gcc version 5.3.0 (GCC) ) #1 SMP PREEMPT Wed Dec 23 20:09:18 CET 2015
+    [    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=bd3e8864-8ed3-4d0d-8717-63d5668239de rw quiet
+    [    0.000000] x86/fpu: Legacy x87 FPU detected.
+    [    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+    [    0.000000] e820: BIOS-provided physical RAM map:
+    [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+    [    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+    [    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+    [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffeffff] usable
+    [    0.000000] BIOS-e820: [mem 0x000000003fff0000-0x000000003fffffff] ACPI data
+    [    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+    [    0.000000] NX (Execute Disable) protection: active
+    [    0.000000] SMBIOS 2.5 present.
+    [    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+    [    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+    [    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+    [    0.000000] e820: last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+    [    0.000000] MTRR default type: uncachable
+    [    0.000000] MTRR variable ranges disabled:
+    [    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT
+    [    0.000000] MTRR: Disabled
+    [    0.000000] CPU MTRRs all blank - virtualized system.
+    [    0.000000] found SMP MP-table at [mem 0x0009fff0-0x0009ffff] mapped at [ffff88000009fff0]
+    [    0.000000] Scanning 1 areas for low memory corruption
+    [    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+    [    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+    [    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+    [    0.000000] BRK [0x01b3f000, 0x01b3ffff] PGTABLE
+    [    0.000000] BRK [0x01b40000, 0x01b40fff] PGTABLE
+    [    0.000000] BRK [0x01b41000, 0x01b41fff] PGTABLE
+    [    0.000000] init_memory_mapping: [mem 0x3fc00000-0x3fdfffff]
+    [    0.000000]  [mem 0x3fc00000-0x3fdfffff] page 2M
+    [    0.000000] init_memory_mapping: [mem 0x20000000-0x3fbfffff]
+    [    0.000000]  [mem 0x20000000-0x3fbfffff] page 2M
+    [    0.000000] init_memory_mapping: [mem 0x00100000-0x1fffffff]
+    [    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+    [    0.000000]  [mem 0x00200000-0x1fffffff] page 2M
+    [    0.000000] init_memory_mapping: [mem 0x3fe00000-0x3ffeffff]
+    [    0.000000]  [mem 0x3fe00000-0x3ffeffff] page 4k
+    [    0.000000] BRK [0x01b42000, 0x01b42fff] PGTABLE
+    [    0.000000] RAMDISK: [mem 0x37932000-0x37c90fff]
+    [    0.000000] ACPI: Early table checksum verification disabled
+    [    0.000000] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+    [    0.000000] ACPI: XSDT 0x000000003FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+    [    0.000000] ACPI: FACP 0x000000003FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+    [    0.000000] ACPI: XSDT 0x000000003FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+    [    0.000000] ACPI: FACP 0x000000003FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+    [    0.000000] ACPI: DSDT 0x000000003FFF0470 001BF1 (v01 VBOX   VBOXBIOS 00000002 INTL 20100528)
+    [    0.000000] ACPI: FACS 0x000000003FFF0200 000040
+    [    0.000000] ACPI: FACS 0x000000003FFF0200 000040
+    [    0.000000] ACPI: APIC 0x000000003FFF0240 000054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+    [    0.000000] ACPI: SSDT 0x000000003FFF02A0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+    [    0.000000] ACPI: Local APIC address 0xfee00000
+    [    0.000000] No NUMA configuration found
+    [    0.000000] Faking a node at [mem 0x0000000000000000-0x000000003ffeffff]
+    [    0.000000] NODE_DATA(0) allocated [mem 0x3ffec000-0x3ffeffff]
+    [    0.000000]  [ffffea0000000000-ffffea0000ffffff] PMD -> [ffff88003e600000-ffff88003f5fffff] on node 0
+    [    0.000000] Zone ranges:
+    [    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+    [    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003ffeffff]
+    [    0.000000]   Normal   empty
+    [    0.000000] Movable zone start for each node
+    [    0.000000] Early memory node ranges
+    [    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+    [    0.000000]   node   0: [mem 0x0000000000100000-0x000000003ffeffff]
+    [    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffeffff]
+    [    0.000000] On node 0 totalpages: 262030
+    [    0.000000]   DMA zone: 64 pages used for memmap
+    [    0.000000]   DMA zone: 21 pages reserved
+    [    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+    [    0.000000]   DMA32 zone: 4032 pages used for memmap
+    [    0.000000]   DMA32 zone: 258032 pages, LIFO batch:31
+    [    0.000000] ACPI: PM-Timer IO Port: 0x4008
+    [    0.000000] ACPI: Local APIC address 0xfee00000
+    [    0.000000] IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-23
+    [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+    [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+    [    0.000000] ACPI: IRQ0 used by override.
+    [    0.000000] ACPI: IRQ9 used by override.
+    [    0.000000] Using ACPI (MADT) for SMP configuration information
+    [    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+    [    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+    [    0.000000] e820: [mem 0x40000000-0xfffbffff] available for PCI devices
+    [    0.000000] Booting paravirtualized kernel on bare hardware
+    [    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370452778343963 ns
+    [    0.000000] setup_percpu: NR_CPUS:128 nr_cpumask_bits:128 nr_cpu_ids:1 nr_node_ids:1
+    [    0.000000] PERCPU: Embedded 32 pages/cpu @ffff88003fc00000 s92824 r8192 d30056 u2097152
+    [    0.000000] pcpu-alloc: s92824 r8192 d30056 u2097152 alloc=1*2097152
+    [    0.000000] pcpu-alloc: [0] 0
+    [    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 257913
+    [    0.000000] Policy zone: DMA32
+    [    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=bd3e8864-8ed3-4d0d-8717-63d5668239de rw quiet
+    [    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+    [    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+    [    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+    [    0.000000] Memory: 1016264K/1048120K available (5666K kernel code, 937K rwdata, 1796K rodata, 1188K init, 1164K bss, 31856K reserved, 0K cma-reserved)
+    [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+    [    0.000000] Preemptible hierarchical RCU implementation.
+    [    0.000000]  Build-time adjustment of leaf fanout to 64.
+    [    0.000000]  RCU restricting CPUs from NR_CPUS=128 to nr_cpu_ids=1.
+    [    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=1
+    [    0.000000] NR_IRQS:8448 nr_irqs:256 16
+    [    0.000000] Console: colour dummy device 80x25
+    [    0.000000] console [tty0] enabled
+    [    0.000000] tsc: Unable to calibrate against PIT
+    [    0.000000] tsc: using PMTIMER reference calibration
+    [    0.000000] tsc: Detected 2501.297 MHz processor
+    [    0.010023] Calibrating delay loop (skipped), value calculated using timer frequency.. 5004.03 BogoMIPS (lpj=8337656)
+    [    0.010027] pid_max: default: 32768 minimum: 301
+    [    0.010037] ACPI: Core revision 20150818
+    [    0.010842] ACPI: 2 ACPI AML tables successfully acquired and loaded
+    [    0.010859] Security Framework initialized
+    [    0.010861] Yama: becoming mindful.
+    [    0.010920] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+    [    0.011143] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+    [    0.012570] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+    [    0.012574] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+    [    0.012719] Initializing cgroup subsys io
+    [    0.012723] Initializing cgroup subsys memory
+    [    0.012729] Initializing cgroup subsys devices
+    [    0.012731] Initializing cgroup subsys freezer
+    [    0.012733] Initializing cgroup subsys net_cls
+    [    0.012734] Initializing cgroup subsys pids
+    [    0.012840] mce: CPU supports 0 MCE banks
+    [    0.012866] process: using mwait in idle threads
+    [    0.012872] Last level iTLB entries: 4KB 512, 2MB 8, 4MB 8
+    [    0.012873] Last level dTLB entries: 4KB 512, 2MB 32, 4MB 32, 1GB 0
+    [    0.032469] Freeing SMP alternatives memory: 20K (ffffffff81a15000 - ffffffff81a1a000)
+    [    0.038453] ftrace: allocating 22571 entries in 89 pages
+    [    0.054122] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+    [    0.093333] smpboot: CPU0: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz (family: 0x6, model: 0x3a, stepping: 0x9)
+    [    0.093333] Performance Events: unsupported p6 CPU model 58 no PMU driver, software events only.
+    [    0.110018] x86: Booted up 1 node, 1 CPUs
+    [    0.110022] smpboot: Total of 1 processors activated (5004.03 BogoMIPS)
+    [    0.110304] NMI watchdog: disabled (cpu0): hardware events not enabled
+    [    0.110305] NMI watchdog: Shutting down hard lockup detector on all cpus
+    [    0.110345] devtmpfs: initialized
+    [    0.113479] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+    [    0.116782] pinctrl core: initialized pinctrl subsystem
+    [    0.116875] RTC time: 17:48:05, date: 01/13/16
+    [    0.117052] NET: Registered protocol family 16
+    [    0.126695] cpuidle: using governor ladder
+    [    0.136727] cpuidle: using governor menu
+    [    0.136863] ACPI: bus type PCI registered
+    [    0.136866] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+    [    0.136991] PCI: Using configuration type 1 for base access
+    [    0.163537] ACPI: Added _OSI(Module Device)
+    [    0.163549] ACPI: Added _OSI(Processor Device)
+    [    0.163558] ACPI: Added _OSI(3.0 _SCP Extensions)
+    [    0.163567] ACPI: Added _OSI(Processor Aggregator Device)
+    [    0.164120] ACPI: Executed 1 blocks of module-level executable AML code
+    [    0.165869] ACPI: Interpreter enabled
+    [    0.165874] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150818/hwxface-580)
+    [    0.165877] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150818/hwxface-580)
+    [    0.165879] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S3_] (20150818/hwxface-580)
+    [    0.165881] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S4_] (20150818/hwxface-580)
+    [    0.165885] ACPI: (supports S0 S5)
+    [    0.165886] ACPI: Using IOAPIC for interrupt routing
+    [    0.166029] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+    [    0.169757] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+    [    0.169764] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+    [    0.169769] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+    [    0.170047] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+    [    0.170278] PCI host bridge to bus 0000:00
+    [    0.170281] pci_bus 0000:00: root bus resource [bus 00-ff]
+    [    0.170283] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+    [    0.170284] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+    [    0.170286] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+    [    0.170287] pci_bus 0000:00: root bus resource [mem 0x40000000-0xffdfffff window]
+    [    0.170331] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+    [    0.170949] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+    [    0.171881] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+    [    0.172375] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+    [    0.172556] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+    [    0.172557] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+    [    0.172558] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+    [    0.172559] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+    [    0.172811] pci 0000:00:02.0: [80ee:beef] type 00 class 0x030000
+    [    0.173779] pci 0000:00:02.0: reg 0x10: [mem 0xe0000000-0xe0ffffff pref]
+    [    0.180779] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+    [    0.181738] pci 0000:00:03.0: reg 0x10: [mem 0xf0000000-0xf001ffff]
+    [    0.183015] pci 0000:00:03.0: reg 0x18: [io  0xd010-0xd017]
+    [    0.186914] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+    [    0.187691] pci 0000:00:04.0: reg 0x10: [io  0xd020-0xd03f]
+    [    0.188588] pci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff]
+    [    0.189373] pci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref]
+    [    0.192661] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+    [    0.192851] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+    [    0.192969] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+    [    0.193853] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310
+    [    0.194754] pci 0000:00:06.0: reg 0x10: [mem 0xf0804000-0xf0804fff]
+    [    0.199593] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+    [    0.200683] pci 0000:00:0b.0: [8086:265c] type 00 class 0x0c0320
+    [    0.201577] pci 0000:00:0b.0: reg 0x10: [mem 0xf0805000-0xf0805fff]
+    [    0.205834] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+    [    0.206772] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+    [    0.208157] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+    [    0.209640] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+    [    0.210132] pci 0000:00:0d.0: reg 0x24: [mem 0xf0806000-0xf0807fff]
+    [    0.213613] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+    [    0.213818] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 10 *11)
+    [    0.213902] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 9 *10 11)
+    [    0.213985] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 *9 10 11)
+    [    0.214111] ACPI: Enabled 2 GPEs in block 00 to 07
+    [    0.214292] vgaarb: setting as boot device: PCI:0000:00:02.0
+    [    0.214297] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+    [    0.214299] vgaarb: loaded
+    [    0.214300] vgaarb: bridge control possible 0000:00:02.0
+    [    0.216722] PCI: Using ACPI for IRQ routing
+    [    0.216727] PCI: pci_cache_line_size set to 64 bytes
+    [    0.216946] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+    [    0.216952] e820: reserve RAM buffer [mem 0x3fff0000-0x3fffffff]
+    [    0.217111] NetLabel: Initializing
+    [    0.217113] NetLabel:  domain hash size = 128
+    [    0.217113] NetLabel:  protocols = UNLABELED CIPSOv4
+    [    0.217127] NetLabel:  unlabeled traffic allowed by default
+    [    0.217174] clocksource: Switched to clocksource refined-jiffies
+    [    0.225213] pnp: PnP ACPI init
+    [    0.225319] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+    [    0.225397] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
+    [    0.225423] pnp 00:02: Plug and Play ACPI device, IDs PNP0400 (active)
+    [    0.226695] pnp: PnP ACPI: found 3 devices
+    [    0.233337] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+    [    0.233350] clocksource: Switched to clocksource acpi_pm
+    [    0.233363] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+    [    0.233364] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+    [    0.233366] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+    [    0.233367] pci_bus 0000:00: resource 7 [mem 0x40000000-0xffdfffff window]
+    [    0.233399] NET: Registered protocol family 2
+    [    0.233576] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+    [    0.233591] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+    [    0.233604] TCP: Hash tables configured (established 8192 bind 8192)
+    [    0.233622] UDP hash table entries: 512 (order: 2, 16384 bytes)
+    [    0.233626] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+    [    0.233659] NET: Registered protocol family 1
+    [    0.233672] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+    [    0.233702] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+    [    0.233733] pci 0000:00:02.0: Video device with shadowed ROM
+    [    0.234135] PCI: CLS 0 bytes, default 64
+    [    0.234187] Unpacking initramfs...
+    [    0.299124] Freeing initrd memory: 3452K (ffff880037932000 - ffff880037c91000)
+    [    0.299254] platform rtc_cmos: registered platform RTC device (no PNP device found)
+    [    0.299290] RAPL PMU detected, API unit is 2^-32 Joules, 3 fixed counters 10737418240 ms ovfl timer
+    [    0.299293] hw unit of domain pp0-core 2^-0 Joules
+    [    0.299294] hw unit of domain package 2^-0 Joules
+    [    0.299296] hw unit of domain pp1-gpu 2^-0 Joules
+    [    0.299370] microcode: CPU0 sig=0x306a9, pf=0x2, revision=0x19
+    [    0.299414] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+    [    0.299460] Scanning for low memory corruption every 60 seconds
+    [    0.299676] futex hash table entries: 256 (order: 2, 16384 bytes)
+    [    0.299878] Initialise system trusted keyring
+    [    0.299962] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+    [    0.301342] zbud: loaded
+    [    0.301577] VFS: Disk quotas dquot_6.6.0
+    [    0.301625] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+    [    0.301811] Key type big_key registered
+    [    0.302212] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+    [    0.306695] io scheduler noop registered
+    [    0.306703] io scheduler deadline registered
+    [    0.306771] io scheduler cfq registered (default)
+    [    0.306943] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+    [    0.306950] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+    [    0.306967] vesafb: mode is 640x480x32, linelength=2560, pages=0
+    [    0.306968] vesafb: scrolling: redraw
+    [    0.306969] vesafb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+    [    0.306982] vesafb: framebuffer at 0xe0000000, mapped to 0xffffc90000200000, using 1216k, total 1216k
+    [    0.309235] Console: switching to colour frame buffer device 80x30
+    [    0.309990] fb0: VESA VGA frame buffer device
+    [    0.310184] GHES: HEST is not enabled!
+    [    0.310288] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+    [    0.310864] Linux agpgart interface v0.103
+    [    0.311448] rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+    [    0.311556] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+    [    0.311575] ledtrig-cpu: registered to indicate activity on CPUs
+    [    0.312001] NET: Registered protocol family 10
+    [    0.315811] NET: Registered protocol family 17
+    [    0.316276] registered taskstats version 1
+    [    0.316293] Loading compiled-in X.509 certificates
+    [    0.316324] zswap: loaded using pool lzo/zbud
+    [    0.324598]   Magic number: 0:536:845
+    [    0.324690] rtc_cmos rtc_cmos: setting system clock to 2016-01-13 17:48:05 UTC (1452707285)
+    [    0.324755] PM: Hibernation image not present or could not be loaded.
+    [    0.325023] Freeing unused kernel memory: 1188K (ffffffff818ec000 - ffffffff81a15000)
+    [    0.325025] Write protecting the kernel read-only data: 8192k
+    [    0.325264] Freeing unused kernel memory: 464K (ffff88000158c000 - ffff880001600000)
+    [    0.325360] Freeing unused kernel memory: 252K (ffff8800017c1000 - ffff880001800000)
+    [    0.332398] random: systemd-tmpfile urandom read with 1 bits of entropy available
+    [    0.383070] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+    [    0.384071] serio: i8042 KBD port at 0x60,0x64 irq 1
+    [    0.384107] serio: i8042 AUX port at 0x60,0x64 irq 12
+    [    0.399987] SCSI subsystem initialized
+    [    0.404927] ACPI: bus type USB registered
+    [    0.404951] usbcore: registered new interface driver usbfs
+    [    0.404959] usbcore: registered new interface driver hub
+    [    0.410000] usbcore: registered new device driver usb
+    [    0.410679] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+    [    0.410947] ehci-pci: EHCI PCI platform driver
+    [    0.411849] ehci-pci 0000:00:0b.0: EHCI Host Controller
+    [    0.411861] ehci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 1
+    [    0.412197] ehci-pci 0000:00:0b.0: irq 19, io mem 0xf0805000
+    [    0.413112] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+    [    0.413747] ohci-pci: OHCI PCI platform driver
+    [    0.418898] libata version 3.00 loaded.
+    [    0.420116] ehci-pci 0000:00:0b.0: USB 2.0 started, EHCI 1.00
+    [    0.420290] hub 1-0:1.0: USB hub found
+    [    0.420297] hub 1-0:1.0: 8 ports detected
+    [    0.421100] ohci-pci 0000:00:06.0: OHCI PCI host controller
+    [    0.421108] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 2
+    [    0.421179] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+    [    0.437177] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+    [    0.474181] hub 2-0:1.0: USB hub found
+    [    0.474209] hub 2-0:1.0: 8 ports detected
+    [    0.475184] ahci 0000:00:0d.0: version 3.0
+    [    0.475280] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+    [    0.475399] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+    [    0.475402] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc
+    [    0.480578] scsi host0: ahci
+    [    0.480787] ata1: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21
+    [    0.480937] ata_piix 0000:00:01.1: version 2.13
+    [    0.486995] scsi host1: ata_piix
+    [    0.490715] scsi host2: ata_piix
+    [    0.490813] ata2: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+    [    0.490816] ata3: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+    [    0.647142] ata3.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+    [    0.647653] ata3.00: configured for UDMA/33
+    [    0.800224] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+    [    0.800432] ata1.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+    [    0.800435] ata1.00: 209715200 sectors, multi 128: LBA48 NCQ (depth 31/32)
+    [    0.800630] ata1.00: configured for UDMA/133
+    [    0.804323] scsi 0:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+    [    0.808721] scsi 2:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+    [    0.813259] sd 0:0:0:0: [sda] 209715200 512-byte logical blocks: (107 GB/100 GiB)
+    [    0.813322] sd 0:0:0:0: [sda] Write Protect is off
+    [    0.813324] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+    [    0.813445] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+    [    0.823953] sr 2:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+    [    0.823957] cdrom: Uniform CD-ROM driver Revision: 3.20
+    [    0.824233] sr 2:0:0:0: Attached scsi CD-ROM sr0
+    [    0.860116] usb 2-1: new full-speed USB device number 2 using ohci-pci
+    [    0.861106]  sda: sda1 sda2 sda3 sda4
+    [    0.861496] sd 0:0:0:0: [sda] Attached SCSI disk
+    [    1.115208] hidraw: raw HID events driver (C) Jiri Kosina
+    [    1.121756] usbcore: registered new interface driver usbhid
+    [    1.121759] usbhid: USB HID core driver
+    [    1.125489] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb2/2-1/2-1:1.0/0003:80EE:0021.0001/input/input2
+    [    1.125624] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+    [    1.296942] tsc: Refined TSC clocksource calibration: 2502.201 MHz
+    [    1.296948] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x24115905063, max_idle_ns: 440795219428 ns
+    [    2.296914] clocksource: Switched to clocksource tsc
+    [    3.431075] floppy0: no floppy controllers found
+    [    3.431134] work still pending
+    [    3.571558] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+    [    4.467840] random: nonblocking pool is initialized
+    [    4.509581] ip_tables: (C) 2000-2006 Netfilter Core Team
+    [    4.594690] systemd[1]: systemd 228 running in system mode. (+PAM -AUDIT -SELINUX -IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN)
+    [    4.594745] systemd[1]: Detected virtualization oracle.
+    [    4.594748] systemd[1]: Detected architecture x86-64.
+    [    4.630376] systemd[1]: Set hostname to <ArchLinux>.
+    [    5.550297] systemd[1]: Created slice User and Session Slice.
+    [    5.550340] systemd[1]: Reached target Remote File Systems.
+    [    5.550375] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+    [    5.550384] systemd[1]: Reached target Encrypted Volumes.
+    [    5.550424] systemd[1]: Listening on udev Control Socket.
+    [    5.550456] systemd[1]: Listening on Journal Socket.
+    [    5.550493] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+    [    5.550664] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+    [    5.550697] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+    [    5.550791] systemd[1]: Created slice System Slice.
+    [    5.570080] systemd[1]: Mounting Temporary Directory...
+    [    5.570555] systemd[1]: Starting Create list of required static device nodes for the current kernel...
+    [    5.619682] systemd[1]: Mounting POSIX Message Queue File System...
+    [    5.629823] systemd[1]: Starting Load Kernel Modules...
+    [    5.630094] systemd[1]: Created slice system-getty.slice.
+    [    5.630826] systemd[1]: Starting Setup Virtual Console...
+    [    5.631028] systemd[1]: Created slice system-netctl.slice.
+    [    5.631756] systemd[1]: Mounting Debug File System...
+    [    5.631965] systemd[1]: Created slice system-systemd\x2dfsck.slice.
+    [    5.632058] systemd[1]: Listening on LVM2 metadata daemon socket.
+    [    5.632125] systemd[1]: Listening on Journal Socket (/dev/log).
+    [    5.632220] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+    [    5.632238] systemd[1]: Reached target Paths.
+    [    5.802030] systemd[1]: Starting Journal Service...
+    [    5.802109] systemd[1]: Listening on udev Kernel Socket.
+    [    5.802150] systemd[1]: Reached target Login Prompts.
+    [    5.802658] systemd[1]: Mounting Huge Pages File System...
+    [    5.803115] systemd[1]: Starting Remount Root and Kernel File Systems...
+    [    5.803144] systemd[1]: Reached target Slices.
+    [    5.804674] systemd[1]: Mounted POSIX Message Queue File System.
+    [    5.804705] systemd[1]: Mounted Debug File System.
+    [    5.804726] systemd[1]: Mounted Temporary Directory.
+    [    5.805017] systemd[1]: Started Create list of required static device nodes for the current kernel.
+    [    5.805267] systemd[1]: Started Setup Virtual Console.
+    [    5.808105] systemd[1]: Mounted Huge Pages File System.
+    [    5.857036] EXT4-fs (sda1): re-mounted. Opts: data=ordered
+    [    5.857860] systemd[1]: Started Remount Root and Kernel File Systems.
+    [    5.993243] input: Unspecified device as /devices/pci0000:00/0000:00:04.0/input/input3
+    [    5.993344] vboxguest: misc device minor 58, IRQ 20, I/O port d020, MMIO at 00000000f0400000 (size 0x400000)
+    [    5.993437] vboxguest: Successfully loaded version 5.0.12_OSE (interface 0x00010004)
+    [    6.029475] vboxsf: Successfully loaded version 5.0.12_OSE (interface 0x00010004)
+    [    6.053015] [drm] Initialized drm 1.1.0 20060810
+    [    6.063569] [drm] Initialized vboxvideo 1.0.0 20090303 for 0000:00:02.0 on minor 0
+    [    6.086253] systemd[1]: Starting Create Static Device Nodes in /dev...
+    [    6.163672] systemd[1]: Starting udev Coldplug all Devices...
+    [    6.164406] systemd[1]: Started Load Kernel Modules.
+    [    6.165659] systemd[1]: Starting Apply Kernel Variables...
+    [    6.169269] systemd[1]: Mounting Configuration File System...
+    [    6.172205] systemd[1]: Mounted Configuration File System.
+    [    6.276296] systemd[1]: Started udev Coldplug all Devices.
+    [    6.366672] systemd[1]: Started Journal Service.
+    [    6.903537] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input4
+    [    6.903537] ACPI: Power Button [PWRF]
+    [    6.903669] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input5
+    [    6.903669] ACPI: Sleep Button [SLPF]
+    [    6.931615] ACPI: AC Adapter [AC] (off-line)
+    [    6.935114] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+    [    6.935200] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input6
+    [    6.992729] FUJITSU Extended Socket Network Device Driver - version 1.0 - Copyright (c) 2015 FUJITSU LIMITED
+    [    7.033074] ACPI: Battery Slot [BAT0] (battery present)
+    [    7.082134] parport_pc 00:02: reported by Plug and Play ACPI
+    [    7.283999] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+    [    7.284002] e1000: Copyright (c) 1999-2006 Intel Corporation.
+    [    7.432583] mousedev: PS/2 mouse device common for all mice
+    [    7.554376] snd_intel8x0 0000:00:05.0: intel8x0_measure_ac97_clock: measured 53037 usecs (1671 samples)
+    [    7.554381] snd_intel8x0 0000:00:05.0: measured clock 31506 rejected
+    [    7.663150] input: PC Speaker as /devices/platform/pcspkr/input/input8
+    [    7.811942] intel_rapl: no valid rapl domains found in package 0
+    [    7.819252] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input7
+    [    7.874818] Adding 1952764k swap on /dev/sda2.  Priority:-1 extents:1 across:1952764k FS
+    [    7.910632] snd_intel8x0 0000:00:05.0: intel8x0_measure_ac97_clock: measured 52746 usecs (3899 samples)
+    [    7.910637] snd_intel8x0 0000:00:05.0: measured clock 73920 rejected
+    [    8.097400] ppdev: user-space parallel port driver
+    [    8.266836] snd_intel8x0 0000:00:05.0: intel8x0_measure_ac97_clock: measured 53091 usecs (3900 samples)
+    [    8.266840] snd_intel8x0 0000:00:05.0: measured clock 73458 rejected
+    [    8.266842] snd_intel8x0 0000:00:05.0: clocking to 48000
+    [    8.268249] piix4_smbus 0000:00:07.0: SMBus base address uninitialized - upgrade BIOS or use force_addr=0xaddr
+    [    8.464727] EXT4-fs (sda4): mounted filesystem with ordered data mode. Opts: data=ordered
+    [    8.535704] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: data=ordered
+    [    8.715935] systemd-journald[166]: Received request to flush runtime journal from PID 1
+    [    8.716538] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:2c:38:28
+    [    8.716545] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+    [    8.771829] e1000 0000:00:03.0 enp0s3: renamed from eth0
+    [   10.144433] floppy0: no floppy controllers found
+    [   10.144491] work still pending
+    [   10.946327] VBoxService 5.0.12_OSE r104815 (verbosity: 0) linux.amd64 (Dec 19 2015 15:22:11) release log
+                   00:00:00.000107 main     Log opened 2016-01-13T17:48:16.121533000Z
+    [   10.947031] 00:00:00.000870 main     OS Product: Linux
+    [   10.947292] 00:00:00.001139 main     OS Release: 4.3.3-2-ARCH
+    [   10.947558] 00:00:00.001382 main     OS Version: #1 SMP PREEMPT Wed Dec 23 20:09:18 CET 2015
+    [   10.947813] 00:00:00.001654 main     Executable: /usr/bin/VBoxService
+                   00:00:00.001655 main     Process ID: 261
+                   00:00:00.001656 main     Package type: LINUX_64BITS_GENERIC (OSE)
+    [   10.949654] 00:00:00.003505 main     5.0.12_OSE r104815 started. Verbose level = 0
+    [   11.853103] IPv6: ADDRCONF(NETDEV_UP): enp0s3: link is not ready
+    [   11.854131] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+    [   11.854486] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+    </pre>
+
+   <p>Information can be filtered using the <code>grep</code> command.</p>
+
+   <p>In order to display information concerning Ethernet port eth0:</p>
+
+   <pre class="prettyprint linenums">
+    dmesg | grep -i eth0
+   </pre>
+
+   <pre class="prettyprint">
+    [    8.716538] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:2c:38:28
+    [    8.716545] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+    [    8.771829] e1000 0000:00:03.0 enp0s3: renamed from eth0
+    </pre>
+
+   <p>In order to display information concerning USB ports:</p>
+
+   <pre class="prettyprint linenums">
+    dmesg | grep -i usb
+   </pre>
+
+
+   <pre class="prettyprint">
+    [    0.404927] ACPI: bus type USB registered
+    [    0.404951] usbcore: registered new interface driver usbfs
+    [    0.404959] usbcore: registered new interface driver hub
+    [    0.410000] usbcore: registered new device driver usb
+    [    0.410679] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+    [    0.411861] ehci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 1
+    [    0.413112] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+    [    0.420116] ehci-pci 0000:00:0b.0: USB 2.0 started, EHCI 1.00
+    [    0.420290] hub 1-0:1.0: USB hub found
+    [    0.421108] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 2
+    [    0.474181] hub 2-0:1.0: USB hub found
+    [    0.860116] usb 2-1: new full-speed USB device number 2 using ohci-pci
+    [    1.121756] usbcore: registered new interface driver usbhid
+    [    1.121759] usbhid: USB HID core driver
+    [    1.125489] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb2/2-1/2-1:1.0/0003:80EE:0021.0001/input/input2
+    [    1.125624] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+   </pre>
+
+   <p>In order to display information memory:</p>
+
+   <pre class="prettyprint linenums">
+    dmesg | grep -i memory
+   </pre>
+
+
+   <pre class="prettyprint">
+    [    0.000000] Scanning 1 areas for low memory corruption
+    [    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+    [    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+    [    0.000000] init_memory_mapping: [mem 0x3fc00000-0x3fdfffff]
+    [    0.000000] init_memory_mapping: [mem 0x20000000-0x3fbfffff]
+    [    0.000000] init_memory_mapping: [mem 0x00100000-0x1fffffff]
+    [    0.000000] init_memory_mapping: [mem 0x3fe00000-0x3ffeffff]
+    [    0.000000] Early memory node ranges
+    [    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+    [    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+    [    0.000000] Memory: 1016264K/1048120K available (5666K kernel code, 937K rwdata, 1796K rodata, 1188K init, 1164K bss, 31856K reserved, 0K cma-reserved)
+    [    0.012723] Initializing cgroup subsys memory
+    [    0.032469] Freeing SMP alternatives memory: 20K (ffffffff81a15000 - ffffffff81a1a000)
+    [    0.299124] Freeing initrd memory: 3452K (ffff880037932000 - ffff880037c91000)
+    [    0.299460] Scanning for low memory corruption every 60 seconds
+    [    0.325023] Freeing unused kernel memory: 1188K (ffffffff818ec000 - ffffffff81a15000)
+    [    0.325264] Freeing unused kernel memory: 464K (ffff88000158c000 - ffff880001600000)
+    [    0.325360] Freeing unused kernel memory: 252K (ffff8800017c1000 - ffff880001800000)
+    </pre>
+
+
+   <h4>List Peripheral Component Interconnect</h4>
+    <p>This command shows a list of information about PCI buses and devices.</p>
+
+   <pre class="prettyprint linenums">
+    lspci
+   </pre>
+
+   <p>Output:</p>
+   <pre class="prettyprint linenums">
+
+<p>   00:00.0 Host bridge: Intel Corporation 440FX - 82441FX PMC [Natoma] (rev 02)<br>   00:01.0 ISA bridge: Intel Corporation 82371SB PIIX3 ISA [Natoma/Triton II]<br>   00:01.1 IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)<br>   00:02.0 VGA compatible controller: InnoTek Systemberatung GmbH VirtualBox Graphics Adapter    00:03.0 Ethernet controller: Intel Corporation 82540EM Gigabit Ethernet Controller (rev 02)<br>   00:04.0 System peripheral: InnoTek Systemberatung GmbH VirtualBox Guest Service<br>   00:05.0 Multimedia audio controller: Intel Corporation 82801AA AC’97 Audio Controller (rev 01)<br>   00:06.0 USB controller: Apple Inc. KeyLargo/Intrepid USB<br>   00:07.0 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 08)    00:0b.0 USB controller: Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) USB2 EHCI Controller<br>   00:0d.0 SATA controller: Intel Corporation 82801HM/HEM (ICH8M/ICH8M-E) SATA Controller [AHCI mode] (rev 02)<br>  </pre></p>
+   <h4>List Universal Serial Buses </h4>
+   <p>This command displays information about USB buses in the system and the devices connected to them.</p>
+
+   <pre class="prettyprint linenums">
+    lsusb
+   </pre>
+
+   <p>Output:</p>
+    <pre class="prettyprint linenums">
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 002 Device 002: ID 80ee:0021 VirtualBox USB Tablet
+    Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+    </pre>
+
+
+   <h3 id="resources">Resources</h3>
+
+<p>A program running on a system is referred to as a <em>process</em>. These can be examined using the <code>ps</code> command.</p>
+<pre class="prettyprint linenums">
+ps
+</pre>
+
+<p>Output:</p>
+<pre class="prettyprint">
+PID TTY          TIME CMD
+456 pts/0    00:00:00 bash
+505 pts/0    00:00:00 ps
+</pre>
+
+<p>The <code>ps</code> command supports three different types of command line parameters: Unix, BSD and GNU.</p>
+
+<p>Unix style parameters</p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td><code>-A</code></td>
+  <td>Shows all processes</td>
+</tr>
+<tr>
+  <td><code>-N</code></td>
+  <td>Shows the opposite of the specified parameters</td>
+</tr>
+<tr>
+  <td><code>-a</code></td>
+  <td>Shows all processes with the exception of session headers and processes without a terminal</td>
+</tr>
+<tr>
+  <td><code>-d</code></td>
+  <td>Shows all processes except session headers</td>
+</tr>
+<tr>
+  <td><code>-e</code></td>
+  <td>Shows all processes</td>
+</tr>
+<tr>
+  <td><code>-c <em>cmdlist</em></code></td>
+  <td>Shows processes contained in the list <em>cmdlist</em></td>
+</tr>
+<tr>
+  <td><code>-G <em>grplist</em></code></td>
+  <td>Shows processes with a group ID listed in <em>grplist</em></td>
+</tr>
+<tr>
+  <td><code>-U <em>userlist</em></code></td>
+  <td>Shows processes owned by a userid listed in <em>userlist</em></td>
+</tr>
+<tr>
+  <td><code>-g <em>grplist</em></code></td>
+  <td>Shows processes by session or by groupid contained in <em>grplist</em></td>
+</tr>
+<tr>
+  <td><code>-p <em>pidlist</em></code></td>
+  <td>Shows processes with PID's in the list <em>pidlist</em></td>
+</tr>
+<tr>
+  <td><code>-s <em>sesslist</em></code></td>
+  <td>Shows processes with session ID in the list <em>sesslist</em></td>
+</tr>
+<tr>
+  <td><code><code>-t <em>ttylist</em></code></code></td>
+  <td>Shows processes with terminal ID in the list <em>ttylist</em></td>
+</tr>
+<tr>
+  <td><code><code>-u <em>userlist</em></code></code></td>
+  <td>Shows processes by effective userid in the list <em>userlist</em></td>
+</tr>
+<tr>
+  <td><code>-F</code></td>
+  <td>Uses extra full output</td>
+</tr>
+<tr>
+  <td><code>-o <em>format</em></code></td>
+  <td>Displays specific columns in the list <em>format</em>, along with the default columns</td>
+</tr>
+<tr>
+  <td><code>-M</code></td>
+  <td>Displays security information about the process</td>
+</tr>
+<tr>
+  <td><code>-c</code></td>
+  <td>Show additional scheduler information about the process</td>
+</tr>
+<tr>
+  <td><code>-f</code></td>
+  <td>Displays a full format listing</td>
+</tr>
+<tr>
+  <td><code>-j</code></td>
+  <td>Shows job information</td>
+</tr>
+<tr>
+  <td><code>-l</code></td>
+  <td>Displays long listing</td>
+</tr>
+<tr>
+  <td><code>-o <em>format</em></code></td>
+  <td>Displays only specific columns listed in <em>format</em></td>
+</tr>
+<tr>
+  <td><code>-y</code></td>
+  <td>Prevents display of process flags</td>
+</tr>
+<tr>
+  <td><code>-z</code></td>
+  <td>Displays the security context information</td>
+</tr>
+<tr>
+  <td><code>-H</code></td>
+  <td>Displays processes in hierarchical format, including parent processes</td>
+</tr>
+<tr>
+  <td><code>-n <em>namelist</em></code></td>
+  <td>Defines the value to display in the WCHAN column</td>
+</tr>
+<tr>
+  <td><code>-w</code></td>
+  <td>Uses wide output format, for unlimited width displays</td>
+</tr>
+<tr>
+  <td><code>-L</code></td>
+  <td>Shows process threads</td>
+</tr>
+<tr>
+  <td><code>-V</code></td>
+  <td>Displays the version of <code>ps</code></td>
+</tr>
+</table>
+
+<p>BSD style parameters</p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td><code>T</code></td>
+  <td>Shows all processes associated with this terminal</td>
+</tr>
+<tr>
+  <td><code>a</code></td>
+  <td>Shows all processes associated with any terminal</td>
+</tr>
+<tr>
+  <td><code>g</code></td>
+  <td>Shows all processes including session headers</td>
+</tr>
+<tr>
+  <td><code>r</code></td>
+  <td>Shows only running processes</td>
+</tr>
+<tr>
+  <td><code>x</code></td>
+  <td>Shows all processes, even those without a terminal device assigned</td>
+</tr>
+<tr>
+  <td><code>U <em>userlist</em></code></td>
+  <td>Shows processes owned by a userid listed in <em>userlist</em></td>
+</tr>
+<tr>
+  <td><code>p <em>pidlist</em></code></td>
+  <td>Shows processes owned by a userid listed in <em>useerlist</em></td>
+</tr>
+<tr>
+  <td><code>t <em>ttylist</em></code></td>
+  <td>Shows processes associated with a terminal listed in <em>ttylist</em></td>
+</tr>
+<tr>
+  <td><code>O <em>format</em></code></td>
+  <td>Lists specific columns in <em>format></em> to display along with the standard columns</td>
+</tr>
+<tr>
+  <td><code>X</code></td>
+  <td>Displays data in the register format</td>
+</tr>
+<tr>
+  <td><code>Z</code></td>
+  <td>Includes security information in the output</td>
+</tr>
+<tr>
+  <td><code>j</code></td>
+  <td>Shows job information</td>
+</tr>
+<tr>
+  <td><code>l</code></td>
+  <td>Uses the long format</td>
+</tr>
+<tr>
+  <td><code>-o <em>format</em></code></td>
+  <td>Displays only the columns specified in <em>format</em></td>
+</tr>
+<tr>
+  <td><code>s</code></td>
+  <td>Uses the signal format</td>
+</tr>
+<tr>
+  <td><code>u</code></td>
+  <td>Uses the user-oriented format</td>
+</tr>
+<tr>
+  <td><code>v</code></td>
+  <td>Uses the virtual memory format</td>
+</tr>
+<tr>
+  <td><code>N <em>namelist</em></code></td>
+  <td>Defines the values to use in the WCHAN column</td>
+</tr>
+<tr>
+  <td><code>O <em>order</em></code></td>
+  <td>Defines the order in which to display the information columns</td>
+</tr>
+<tr>
+  <td><code>S</code></td>
+  <td>Sums numerical information, such as CPU and memory usage, for child processes into the parent process</td>
+</tr>
+<tr>
+  <td><code>c</code></td>
+  <td>Displays the true command name; the name of the program used to start the process</td>
+</tr>
+<tr>
+  <td><code>e</code></td>
+  <td>Displays any environment variables used by the command</td>
+</tr>
+<tr>
+  <td><code>f</code></td>
+  <td>Displays processes in a hierarchical format, showing which processes started which processes</td>
+</tr>
+<tr>
+  <td><code>h</code></td>
+  <td>Prevents display of header information</td>
+</tr>
+<tr>
+  <td><code>k <em>sort</em></code></td>
+  <td>Defines the column(s) to use for sorting the output</td>
+</tr>
+<tr>
+  <td><code>n</code></td>
+  <td>Uses numeric values for user and group ID's, along with WCHAN information</td>
+</tr>
+<tr>
+  <td><code>w</code></td>
+  <td>Produces wide output for wider terminals</td>
+</tr>
+<tr>
+  <td><code>H</code></td>
+  <td>Displays threads as if they were processes</td>
+</tr>
+<tr>
+  <td><code>m</code></td>
+  <td>Displays threads after their processes</td>
+</tr>
+<tr>
+  <td><code>L</code></td>
+  <td>Lists all format specifiers</td>
+</tr>
+<tr>
+  <td><code>V</code></td>
+  <td>Displays the version of <code>ps</code></td>
+</table>
+
+<p>GNU style parameters</p>
+
+<table>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td><code>--deselect</code></td>
+  <td>Shows all processes except those listed in the command line</td>
+</tr>
+<tr>
+  <td><code>--Group <em>grplist</em></code></td>
+  <td>Shows processes whose group ID is listed in <em>grplist</em></td>
+</tr>
+<tr>
+  <td><code>--User <em>userlist</em></code></td>
+  <td>Shows processes whose user ID is listed in <em>userlist</em></td>
+</tr>
+<tr>
+  <td><code>--group <em>grplist</em></code></td>
+  <td>Shows processes whose effective group ID is listed in <em>grplist</em></td>
+</tr>
+<tr>
+  <td><code>--pid <em>pidlist</em></code></td>
+  <td>Shows processes whose process ID is listed in <em>pidlist</em></td>
+</tr>
+<tr>
+  <td><code>--ppid <em>pidlist</em></code></td>
+  <td>Shows processes whose parent process ID is listed in <em>pidlist</em></td>
+</tr>
+<tr>
+  <td><code>--sid <em>sidlist</em></code></td>
+  <td>Shows processes whose session ID is listed in <em>pidlist</em></td>
+</tr>
+<tr>
+  <td><code>--tty <em>ttylist</em></code></td>
+  <td>Shows processes whose terminal device ID is listed in <em>ttylist</em></td>
+</tr>
+<tr>
+  <td><code>--user <em>userlist</em></code></td>
+  <td>Shows processes whose effective user ID is listed in <em>userlist</em></td>
+</tr>
+<tr>
+  <td><code>--format <em>format</em></code></td>
+  <td>Displays only columns specified in the <em>format</em></td>
+</tr>
+<tr>
+  <td><code>--context</code></td>
+  <td>Displays additional security information</td>
+</tr>
+<tr>
+  <td><code>--cols <em>n</em></code></td>
+  <td>Sets screen width to <em>n</em> columns</td>
+</tr>
+<tr>
+  <td><code>--columns <em>n</em></code></td>
+  <td>Sets screen width to <em>n</em> columns</td>
+</tr>
+<tr>
+  <td><code>--cumulative</code></td>
+  <td>Includes stopped child process information</td>
+</tr>
+<tr>
+  <td><code>--forest</code></td>
+  <td>Displays processes in a hierarchical listing showing parent processes</td>
+</tr>
+<tr>
+  <td><code>--headers</code></td>
+  <td>Repeats column headers on each page of output</td>
+</tr>
+<tr>
+  <td><code>--no-headers</code></td>
+  <td>Prevents display of columns headers</td>
+</tr>
+<tr>
+  <td><code>--lines <em>n</em></code></td>
+  <td>Sets screen height to <em>n</em> lines</td>
+</tr>
+<tr>
+  <td><code>--rows <em>n</em></code></td>
+  <td>Sets screen height to <em>n</em> lines</td>
+</tr>
+<tr>
+  <td><code>--sort order</code></td>
+  <td>Defines the column(s) to use for sorting the output</td>
+</tr>
+<tr>
+  <td><code>--width <em>n</em></code></td>
+  <td>Sets screen width to <em>n</em> columns</td>
+</tr>
+<tr>
+  <td><code>--help</code></td>
+  <td>Displays help information</td>
+</tr>
+<tr>
+  <td><code>--info</code></td>
+  <td>Displays debugging information</td>
+</tr>
+<tr>
+  <td><code>--version</code></td>
+  <td>Displays the version of the <em>ps</em> program</td>
+</tr>
+</table>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://asylumstream.github.io/2020/05/23/Basic-Shell-Commands/" data-id="ckak7z7rc0007vd074aw7fi05" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Vim-Movement-Commands/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Vim Movement Commands</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Basic-Shell-Scripting/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Basic Shell Scripting</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+          
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Shell/" rel="tag">Shell</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/05/23/Structured-Shell-Commands/">Structured Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Scripting/">Basic Shell Scripting</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Commands/">Basic Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Movement-Commands/">Vim Movement Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Insert-Commands/">Vim Insert Commands</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 AS<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

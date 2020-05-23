@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Basic Shell Scripting | Asylum Stream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Multiple Commands     If you want to run two commands together, you can enter them on the same prompt line, separated with a semicolon - ;     Using this technique is fi ne for small scripts, but it h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Shell Scripting">
+<meta property="og:url" content="https://asylumstream.github.io/2020/05/23/Basic-Shell-Scripting/index.html">
+<meta property="og:site_name" content="Asylum Stream">
+<meta property="og:description" content="Multiple Commands     If you want to run two commands together, you can enter them on the same prompt line, separated with a semicolon - ;     Using this technique is fi ne for small scripts, but it h">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T14:32:22.000Z">
+<meta property="article:modified_time" content="2020-05-23T14:38:07.241Z">
+<meta property="article:author" content="AS">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Shell">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Asylum Stream" type="application/atom+xml">
+  
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Armata|Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Asylum Stream</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-9 blog-main">
+          <article id="post-Basic-Shell-Scripting" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Basic Shell Scripting
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2020/05/23/Basic-Shell-Scripting/" class="article-date"><time datetime="2020-05-23T14:32:22.000Z" itemprop="datePublished">23-05-2020</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+           <h3 id="Multiple-Commands">Multiple Commands</h3>
+    <p>If you want to run two commands together, you can enter them on the same prompt line, separated with a semicolon - <code>;</code></p>
+
+   <p>Using this technique is fi ne for small scripts, but it has a major drawback: You must enter the entire command at the command prompt every time you want to run it. Instead of having to manually enter the commands onto a command line, you can combine the commands into a simple text fi le. When you need to run the commands, just simply run the text file.</p>
+
+   <a id="more"></a>
+
+   <h3 id="Creating-Script-Files">Creating Script Files</h3>
+    <p>When creating a shell script fi le, you must specify the shell you are using in the first line of the file.</p>
+<pre>#!/bin/bash</pre>
+
+   <p>The shell uses an environment variable called <code>PATH</code> to find commands.</p>
+<pre>$ echo $PATH
+/home/as/bin:/home/as/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</pre>
+
+   <p>To get the shell to find your script, do one of the following:</p>
+    <ol>
+      <li>Add the directory where our shell script file is located to the <code>PATH</code> environment variable.</li>
+      <li>Use an absolute or relative file path to reference our shell script file in the prompt.</li>
+<pre>./scriptname</pre>
+    </ol>
+
+   <p>Make the script executable. Give the file owner permission to execute the file, using the <code>chmod</code> command.
+<pre>chmod u+x scriptname</pre>
+<p>or</p>
+<pre>chmod 770</pre>
+
+
+   <h3 id="Displaying-Messages">Displaying Messages</h3>
+    <p>Most shell commands produce their own output, which is displayed on the console monitor where the script is running. In order to add your own text messages to help the script user know what is happening within the script, use the <code>echo</code> command.</p>
+<pre>echo This will display a message</pre>
+<p>or if using apostrophes</p>
+<pre>echo "This'll display a message"</pre>
+
+   <p>To <code>echo</code> a text string on the same line as a command output use: <code>echo -n</code></p>
+
+   <h3 id="Variables">Variables</h3>
+    <p>Variables allow you to temporarily store information within the shell script for use with other commands in the script.</p>
+
+   <h4>Environment Variables</h4>
+    <p>The shell maintains environment variables that track specifi c system information, such as the name of the system, the name of the user logged in to the system, the user’s system ID (called UID), the default home directory of the user, and the search path used by the shell to find programs. You can display a complete list of active environment variables available by using the <code>set</code> command:</p>
+<pre>$ set | less
+  BASH=/bin/bash
+  BASHOPTS=checkwinsize:cmdhist:complete_fullquote:expand_aliases:extglob:extquote:force_fignore:histappend:interactive_comments:progcomp:promptvars:sourcepath
+  BASH_ALIASES=()
+  BASH_ARGC=()
+  BASH_ARGV=()
+  BASH_CMDS=()
+  BASH_COMPLETION_COMPAT_DIR=/etc/bash_completion.d
+  BASH_LINENO=()
+  BASH_SOURCE=()
+  BASH_VERSINFO=([0]="4" [1]="3" [2]="48" [3]="1" [4]="release" [5]="i686-pc-linux-gnu")
+  BASH_VERSION='4.3.48(1)-release'
+  CLUTTER_BACKEND=x11
+  COLORTERM=xfce4-terminal
+  COLUMNS=80
+  DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-OgOgp6RCCH,guid=02c0409b4acf9c892f95d3a85ac0acf1
+  DEFAULTS_PATH=/usr/share/gconf/backbox.default.path
+  DESKTOP_SESSION=backbox
+  DIRSTACK=()
+  DISPLAY=:0.0
+  EUID=1000
+  GDMSESSION=backbox
+  GDM_LANG=en_US
+  GLADE_CATALOG_PATH=:
+  GLADE_MODULE_PATH=:
+  GLADE_PIXMAP_PATH=:
+  GROUPS=()
+  GTK_OVERLAY_SCROLLING=0
+  HISTCONTROL=ignoreboth
+  HISTFILE=/home/as/.bash_history
+  HISTFILESIZE=2000
+  HISTSIZE=1000
+  HOME=/home/as
+  HOSTNAME=eisegesis
+  HOSTTYPE=i686
+  IFS=$' \t\n'
+  LANG=en_US.UTF-8
+  LANGUAGE=en_US
+[...snip...]</pre>
+
+   <p>You can tap into these environment variables from within your scripts by using the environment variable’s name preceded by a dollar sign.</p>
+<pre>echo "User info for userid: $USER"</pre>
+
+   <h4>User Variables</h4>
+    <p>User variables can be any text string of up to 20 letters, digits, or an underscore character; and are case sensitive.</p>
+    <p>Values are assigned to user variables using an equal sign. No spaces can appear between the variable, the equal sign, and the value.</p>
+    <p>The shell script automatically determines the data type used for the variable value. Variables defined within the shell script maintain their values throughout the life of the shell script but are deleted when the shell script completes. As with system variable, they can be referenced using the dollar sign.</p>
+
+   <h4>Command Substitution</h4>
+    <p>There are two ways to assign the output of a command to a variable:</p>
+    <ol>
+      <li>The backtick <code>`</code></li>
+      <li>The <code>$()</code> format</li>
+    </ol>
+
+   <h3 id="IO-Redirection">I/O Redirection</h3>
+    <p>Sometimes, you want to save the output from a command instead of just having it displayed on the monitor. The bash shell provides a few different operators that allow you to redirect the output of a command to an alternative location (such as a file). Redirection can be used for input as well as output, redirecting a file to a command for input.</p>
+
+   <h4>Output Redirection</h4>
+    <p>The most basic type of redirection is sending output from a command to a fi le. The bash shell uses the greater-than symbol (>) for this:</p>
+<pre>command > outputfile</pre>
+
+   <h4>Input Redirection</h4>
+    <p>Input redirection is the opposite of output redirection. Instead of taking the output of a command and redirecting it to a file, input redirection takes the content of a file and redirects it to a command.</p>
+<pre>command < inputfile</pre>
+
+   <h3 id="Pipes">Pipes</h3>
+    <p>Use pipes to send the output of one command to the input of another command. As seen above with the <code>set</code> command piping to <code>less</code></p>
+
+   <h3 id="Exiting">Exiting</h3>
+    <p>Linux provides the <code>$?</code> special variable that holds the exit status value from the last command that executed.</p>
+    <h4>Linux Exit Status Codes</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Code</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>Successful completion of the command</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>General unknown error</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Misuse of shell command</td>
+      </tr>
+      <tr>
+        <td>126</td>
+        <td>The command can’t execute</td>
+      </tr>
+      <tr>
+        <td>127</td>
+        <td>Command not found</td>
+      </tr>
+      <tr>
+        <td>128</td>
+        <td>Invalid exit argument</td>
+      </tr>
+      <tr>
+        <td>128x</td>
+        <td>Fatal error with Linux signal x</td>
+      </tr>
+      <tr>
+        <td>130</td>
+        <td>Command terminated with Ctrl+C</td>
+      </tr>
+      <tr>
+        <td>255</td>
+        <td>Exit status out of range</td>
+      </tr>
+    </table>
+    <br>
+
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://asylumstream.github.io/2020/05/23/Basic-Shell-Scripting/" data-id="ckak7z7r20001vd077vzy2mow" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Basic-Shell-Commands/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Basic Shell Commands</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2020/05/23/Structured-Shell-Commands/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Structured Shell Commands</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-2 col-sm-offset-1 blog-sidebar">
+          
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Shell/" rel="tag">Shell</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="sidebar-module-list-count">3</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/05/23/Structured-Shell-Commands/">Structured Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Scripting/">Basic Shell Scripting</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Basic-Shell-Commands/">Basic Shell Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Movement-Commands/">Vim Movement Commands</a>
+        </li>
+      
+        <li>
+          <a href="/2020/05/23/Vim-Insert-Commands/">Vim Insert Commands</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 AS<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
